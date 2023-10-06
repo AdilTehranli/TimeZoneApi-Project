@@ -1,0 +1,17 @@
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\bin\Debug\net7.0\TimeZone.Business.deps.json
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\bin\Debug\net7.0\TimeZone.Business.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\bin\Debug\net7.0\TimeZone.Business.pdb
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\bin\Debug\net7.0\TimeZone.Core.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\bin\Debug\net7.0\TimeZone.DAL.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\bin\Debug\net7.0\TimeZone.DAL.pdb
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\bin\Debug\net7.0\TimeZone.Core.pdb
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\TimeZone.Business.csproj.AssemblyReference.cache
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\TimeZone.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\TimeZone.Business.AssemblyInfoInputs.cache
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\TimeZone.Business.AssemblyInfo.cs
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\TimeZone.Business.csproj.CoreCompileInputs.cache
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\TimeZone.Business.csproj.CopyComplete
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\TimeZone.Business.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\refint\TimeZone.Business.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\TimeZone.Business.pdb
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Business\obj\Debug\net7.0\ref\TimeZone.Business.dll

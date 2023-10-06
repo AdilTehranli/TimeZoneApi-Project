@@ -1,0 +1,17 @@
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\bin\Debug\net7.0\TimeZone.DAL.deps.json
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\bin\Debug\net7.0\TimeZone.DAL.runtimeconfig.json
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\bin\Debug\net7.0\TimeZone.DAL.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\bin\Debug\net7.0\TimeZone.DAL.pdb
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\bin\Debug\net7.0\TimeZone.Core.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\bin\Debug\net7.0\TimeZone.Core.pdb
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\TimeZone.DAL.csproj.AssemblyReference.cache
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\TimeZone.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\TimeZone.DAL.AssemblyInfoInputs.cache
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\TimeZone.DAL.AssemblyInfo.cs
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\TimeZone.DAL.csproj.CoreCompileInputs.cache
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\TimeZone.DAL.csproj.CopyComplete
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\TimeZone.DAL.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\refint\TimeZone.DAL.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\TimeZone.DAL.pdb
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\TimeZone.DAL.genruntimeconfig.cache
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.DAL\obj\Debug\net7.0\ref\TimeZone.DAL.dll
