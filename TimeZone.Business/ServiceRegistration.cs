@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
+using TimeZone.Business.Services.Implements;
+using TimeZone.Business.Services.Interfaces;
 
 namespace TimeZone.Business
 {
-    internal class ServiceRegistration
+    public static class ServiceRegistration
     {
+        public static void AddServices(this IServiceCollection services)
+        {
+           services.AddScoped<ISliderService,SliderService>();
+
+        }
     }
 }

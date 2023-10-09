@@ -70,3 +70,9 @@ C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\TimeZone.DAL.d
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\TimeZone.Business.pdb
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\TimeZone.Core.pdb
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\TimeZone.DAL.pdb
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\FluentValidation.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\FluentValidation.AspNetCore.dll

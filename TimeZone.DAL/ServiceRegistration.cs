@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
+using TimeZone.DAL.Repositories.Implements;
+using TimeZone.DAL.Repositories.Interfaces;
 
 namespace TimeZone.DAL
 {
-    internal class ServiceRegistration
+    public static class ServiceRegistration
     {
+        public static void AddRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<ISliderRepository,SliderRepository>();
+        }
     }
 }

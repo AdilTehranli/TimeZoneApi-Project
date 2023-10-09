@@ -10,4 +10,12 @@ public class SliderCreateDto
     public string Title { get; set; }
     public string Description { get; set; }
 }
-public class SliderCreateDtoValidator: AbstractValidator
+public class SliderCreateDtoValidator : AbstractValidator<SliderCreateDto>
+{
+    public SliderCreateDtoValidator()
+    {
+        RuleFor(s=>s.SliderImage).NotEmpty().NotNull();
+        RuleFor(s=>s.Title).MaximumLength(60).NotEmpty().NotNull();
+        RuleFor(s=>s.Description).MaximumLength(250).NotEmpty().NotNull();
+    }
+}

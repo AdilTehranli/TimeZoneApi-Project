@@ -1,4 +1,5 @@
-﻿using TimeZone.Business.Dtos.SliderDtos;
+﻿using AutoMapper;
+using TimeZone.Business.Dtos.SliderDtos;
 using TimeZone.Business.Services.Interfaces;
 using TimeZone.DAL.Repositories.Interfaces;
 
@@ -7,9 +8,11 @@ namespace TimeZone.Business.Services.Implements;
 public class SliderService : ISliderService
 {
     readonly ISliderRepository _sliderRepo;
-    public SliderService(ISliderRepository sliderRepo)
+    readonly IMapper _mapper;
+    public SliderService(ISliderRepository sliderRepo, IMapper mapper)
     {
         _sliderRepo = sliderRepo;
+        _mapper = mapper;
     }
 
     public Task CreateAsnyc(SliderCreateDto createDto)
