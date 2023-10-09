@@ -37,29 +37,35 @@ public Repository(AppDbContext context)
         return _getIncludes(Table, includes).Where(expression);
     }
 
-    public Task<TEntity> FindByIdAsync(int id, params string[] includes)
+    public async Task<TEntity> FindByIdAsync(int id, params string[] includes)
     {
-        throw new NotImplementedException();
+        if (includes.Length == 0)
+        {
+            return await Table.FindAsync(id);
+        }
+        var query = Table.AsQueryable();
+        return await _getIncludes(query, includes).SingleOrDefaultAsync(t => t.Id == id);
     }
 
     public IQueryable<TEntity> GetAll(params string[] includes)
     {
-        throw new NotImplementedException();
+        var query = Table.AsQueryable();
+        return _getIncludes(query, includes);
     }
 
-    public Task<TEntity> GetSingleAsnyc(Expression<Func<TEntity, bool>> expression, params string[] includes)
+    public async Task<TEntity> GetSingleAsnyc(Expression<Func<TEntity, bool>> expression, params string[] includes)
     {
-        throw new NotImplementedException();
+        return await _getIncludes(Table, includes).SingleOrDefaultAsync(expression);
     }
 
-    public Task<bool> IsExistAsync(Expression<Func<TEntity, bool>> expression)
+    public async Task<bool> IsExistAsync(Expression<Func<TEntity, bool>> expression)
     {
-        throw new NotImplementedException();
+        return await Table.AnyAsync(expression);
     }
 
     public void RevertSoftDelete(TEntity entity)
     {
-        throw new NotImplementedException();
+        entity.IsDeleted = false;
     }
 
     public async Task SaveAsync()
@@ -69,7 +75,7 @@ public Repository(AppDbContext context)
 
     public void SoftDelete(TEntity entity)
     {
-        throw new NotImplementedException();
+        entity.IsDeleted = true;
     }
     IQueryable<TEntity> _getIncludes(IQueryable<TEntity> query, params string[] includes)
     {
