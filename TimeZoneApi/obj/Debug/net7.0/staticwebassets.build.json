@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "mGpWuuaTofiAC90w17Zgpc0bQtM3O0sr9yY8VfQH2U4=",
+  "Hash": "Uh2pi7my3SXfl2bQlXKpChKX38dKGm7Nd3UjEe8egYI=",
   "Source": "TimeZoneApi",
   "BasePath": "_content/TimeZoneApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "TimeZoneApi\\wwwroot",
+      "Source": "TimeZoneApi",
+      "ContentRoot": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\",
+      "BasePath": "_content/TimeZoneApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\img\\a51b93e4-d91c-4e15-bc3a-9b6c630d8f7d.jpg",
+      "SourceId": "TimeZoneApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\",
+      "BasePath": "_content/TimeZoneApi",
+      "RelativePath": "images/img/a51b93e4-d91c-4e15-bc3a-9b6c630d8f7d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\img\\a51b93e4-d91c-4e15-bc3a-9b6c630d8f7d.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\img\\d3f15522-dbca-40a8-90c5-03e695f77e14.jpg",
+      "SourceId": "TimeZoneApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\",
+      "BasePath": "_content/TimeZoneApi",
+      "RelativePath": "images/img/d3f15522-dbca-40a8-90c5-03e695f77e14.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\img\\d3f15522-dbca-40a8-90c5-03e695f77e14.jpg"
+    }
+  ]
 }

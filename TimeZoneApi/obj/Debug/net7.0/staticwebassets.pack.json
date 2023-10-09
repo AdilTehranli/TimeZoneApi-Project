@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\img\\a51b93e4-d91c-4e15-bc3a-9b6c630d8f7d.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\a51b93e4-d91c-4e15-bc3a-9b6c630d8f7d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\img\\d3f15522-dbca-40a8-90c5-03e695f77e14.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\d3f15522-dbca-40a8-90c5-03e695f77e14.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.TimeZoneApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.TimeZoneApi.props",
+      "PackagePath": "build\\TimeZoneApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.TimeZoneApi.props",
+      "PackagePath": "buildMultiTargeting\\TimeZoneApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.TimeZoneApi.props",
+      "PackagePath": "buildTransitive\\TimeZoneApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
