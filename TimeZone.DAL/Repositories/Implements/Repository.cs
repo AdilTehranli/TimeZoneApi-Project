@@ -25,6 +25,11 @@ public Repository(AppDbContext context)
     {
         Table.Remove(entity);
     }
+    public async Task UpdateAsync(TEntity entity)
+    {
+        Table.Update(entity);
+        await _context.SaveChangesAsync();
+    }
 
     public async Task DeleteAsync(int id)
     {
@@ -85,4 +90,6 @@ public Repository(AppDbContext context)
         }
         return query;
     }
+
+   
 }

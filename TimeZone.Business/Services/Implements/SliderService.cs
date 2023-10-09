@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using BlogProject.Business.ExtensionServices.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using System.IO;
 using TimeZone.Business.Dtos.SliderDtos;
 using TimeZone.Business.Services.Interfaces;
 using TimeZone.Core.Entities;
+using TimeZone.DAL.Contexts;
 using TimeZone.DAL.Repositories.Interfaces;
 
 namespace TimeZone.Business.Services.Implements;
@@ -19,6 +22,7 @@ public class SliderService : ISliderService
         _mapper = mapper;
         _fileservice = fileservice;
     }
+ 
 
     public async Task CreateAsnyc(SliderCreateDto createDto)
     {
@@ -49,8 +53,25 @@ public class SliderService : ISliderService
         
     }
 
-    public Task UpdateAsnyc(int id, SliderUpdateDto updateDto)
+    public async Task UpdateAsnyc(int id, SliderUpdateDto updateDto)
     {
-        throw new NotImplementedException();
+        if (id < 1)
+        {
+            throw new ArgumentException("Invalid ID. ID should be greater than or equal to 1.");
+        }
+        var entity = await _sliderRepo.FindByIdAsync(id);
+        if (entity == null)
+        {
+            throw new NullReferenceException("not exist entity");
+        }
+
+        entity.SliderImage = await _fileservice.UploadAsync(updateDto.SliderImage, Path.Combine("images", "img"));
+        entity.Title = updateDto.Title;
+       entity.Description = updateDto.Description;
+       
+        await _sliderRepo.UpdateAsync(entity);
+        await _sliderRepo.SaveAsync();
     }
+
+
 }
