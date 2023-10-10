@@ -31,7 +31,7 @@ public class SliderService : ISliderService
             throw new NullReferenceException("Data is null");
         }
         var mapper = _mapper.Map<Slider>(createDto);
-        mapper.SliderImage = await _fileservice.UploadAsync(createDto.SliderImage, Path.Combine("images", "img"));
+        mapper.SliderImage = await _fileservice.UploadAsync(createDto.SliderImage, Path.Combine("images"));
         if(mapper == null)
         {
             throw new NullReferenceException("Mapper is null");
@@ -49,7 +49,7 @@ public class SliderService : ISliderService
     public async Task<IEnumerable<SliderListItemDto>> GetAllAsync()
     {
    
-        return _mapper.Map<IEnumerable<SliderListItemDto>>(_sliderRepo.GetAll());
+        return _mapper.Map<IEnumerable<SliderListItemDto>>( _sliderRepo.GetAll());
         
     }
 
@@ -65,7 +65,7 @@ public class SliderService : ISliderService
             throw new NullReferenceException("not exist entity");
         }
 
-        entity.SliderImage = await _fileservice.UploadAsync(updateDto.SliderImage, Path.Combine("images", "img"));
+        entity.SliderImage = await _fileservice.UploadAsync(updateDto.SliderImage, Path.Combine("images"));
         entity.Title = updateDto.Title;
        entity.Description = updateDto.Description;
        

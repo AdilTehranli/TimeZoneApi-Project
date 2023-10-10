@@ -11,8 +11,8 @@ using TimeZone.DAL.Contexts;
 namespace TimeZone.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231009073944_addedslidertable")]
-    partial class addedslidertable
+    [Migration("20231010073628_craetealltables")]
+    partial class craetealltables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

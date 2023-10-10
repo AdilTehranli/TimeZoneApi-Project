@@ -8,8 +8,8 @@ public class SliderMappingProfiles:Profile
 {
     public SliderMappingProfiles() 
     {
-        CreateMap<Slider,SliderListItemDto>();
-        CreateMap<SliderCreateDto,Slider>();
-        CreateMap<SliderUpdateDto,Slider>();
+        CreateMap<Slider,SliderListItemDto>().ReverseMap();
+        CreateMap<SliderCreateDto,Slider>().ReverseMap();
+        CreateMap<SliderUpdateDto,Slider>().ReverseMap();
     }
 }
