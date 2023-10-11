@@ -9,6 +9,4 @@ public class Slider:BaseEntity
     public string SliderImage { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
-    [NotMapped]
-    public IFormFile ImageFile { get; set; }
 }

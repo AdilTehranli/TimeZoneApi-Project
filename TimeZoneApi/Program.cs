@@ -9,6 +9,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.FileProviders;
 using ServiceStack.Text;
+using TimeZone.Core.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,11 +49,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors();
 app.UseHttpsRedirection();
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider=new PhysicalFileProvider(Path.Combine(builder.Environment.ContentRootPath,"Images")),
-    RequestPath="/Images "
-});
+app.UseStaticFiles();
 app.UseAuthorization();
 
 app.MapControllers();

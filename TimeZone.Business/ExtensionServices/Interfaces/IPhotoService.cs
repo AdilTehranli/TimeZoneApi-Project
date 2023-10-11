@@ -1,8 +1,10 @@
-﻿using CloudinaryDotNet.Actions;
+﻿//using CloudinaryDotNet.Actions;
+//using Microsoft.AspNetCore.Http;
 
-namespace TimeZone.Business.ExtensionServices.Interfaces;
+//namespace TimeZone.Business.ExtensionServices.Interfaces;
 
-public interface IPhotoService
-{
-    Task<ImageUploadResult>
-}
+//public interface IPhotoService
+//{
+//    Task<ImageUploadResult> AddPhotoAsnyc(IFormFile file);
+//    Task<DeletionResult> DeletePhotoAsnyc(string publicId);
+//}

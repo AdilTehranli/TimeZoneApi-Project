@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\7728f638-e51e-4c70-b68d-fb777b3e2d00.png",
+      "PackagePath": "staticwebassets\\images\\7728f638-e51e-4c70-b68d-fb777b3e2d00.png"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\img\\255082e7-4972-40c7-846f-c015c27e9a60.png",
       "PackagePath": "staticwebassets\\images\\img\\255082e7-4972-40c7-846f-c015c27e9a60.png"
     },

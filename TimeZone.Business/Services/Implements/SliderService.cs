@@ -22,7 +22,7 @@ public class SliderService : ISliderService
         _mapper = mapper;
         _fileservice = fileservice;
     }
- 
+
 
     public async Task CreateAsnyc(SliderCreateDto createDto)
     {
@@ -31,8 +31,8 @@ public class SliderService : ISliderService
             throw new NullReferenceException("Data is null");
         }
         var mapper = _mapper.Map<Slider>(createDto);
-        mapper.SliderImage = await _fileservice.UploadAsync(createDto.SliderImage, Path.Combine("images"));
-        if(mapper == null)
+        mapper.SliderImage = await _fileservice.UploadAsync(createDto.SliderImage,Path.Combine("images"));
+        if (mapper == null)
         {
             throw new NullReferenceException("Mapper is null");
         }
@@ -48,8 +48,8 @@ public class SliderService : ISliderService
 
     public async Task<IEnumerable<SliderListItemDto>> GetAllAsync()
     {
-   
-        return _mapper.Map<IEnumerable<SliderListItemDto>>( _sliderRepo.GetAll());
+      
+        return  _mapper.Map<IEnumerable<SliderListItemDto>>( _sliderRepo.GetAll());
         
     }
 

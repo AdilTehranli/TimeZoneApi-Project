@@ -3,6 +3,7 @@ using BlogProject.Business.ExtensionServices.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using TimeZone.Business.Services.Implements;
 using TimeZone.Business.Services.Interfaces;
+using TimeZone.Core.Entities;
 
 namespace TimeZone.Business
 {
