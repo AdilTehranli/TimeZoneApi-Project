@@ -77,3 +77,6 @@ C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\FluentValidati
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\TimeZoneApi.staticwebassets.runtime.json
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\CloudinaryDotNet.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\ServiceStack.Text.dll

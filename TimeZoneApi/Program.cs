@@ -6,6 +6,9 @@ using TimeZone.DAL.Contexts;
 using Microsoft.Extensions.DependencyInjection;
 using TimeZone.Business.Services.Implements;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Extensions.FileProviders;
+using ServiceStack.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,7 +48,11 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors();
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider=new PhysicalFileProvider(Path.Combine(builder.Environment.ContentRootPath,"Images")),
+    RequestPath="/Images "
+});
 app.UseAuthorization();
 
 app.MapControllers();
