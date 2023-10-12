@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 
-namespace TimeZone.Business.Dtos.ProductDtos
+namespace TimeZone.Business.Dtos.ProductDtos;
+
+public class ProductCreateDto
 {
-    internal class ProductCreateDto
-    {
-    }
+    public IFormFile ProductImage { get; set; }
+    public string Title { get; set; }
+    public double Price { get; set; }
+    public int CategoryId { get; set; }
+    public int BrandId { get; set; }
 }
