@@ -1,5 +1,14 @@
-﻿namespace TimeZone.Business.Dtos.ProductDtos;
+﻿using Microsoft.AspNetCore.Http;
+using TimeZone.Core.Entities;
+
+namespace TimeZone.Business.Dtos.ProductDtos;
 
 public class ProductListItemDto
 {
+    public int Id { get; set; }
+    public IFormFile ProductImage { get; set; }
+    public string Title { get; set; }
+    public double Price { get; set; }
+    public Category Category { get; set; }
+    public Brand Brand { get; set; }
 }
