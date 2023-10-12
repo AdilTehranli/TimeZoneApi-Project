@@ -13,6 +13,8 @@ namespace TimeZone.Business
         {
            services.AddScoped<ISliderService,SliderService>();
            services.AddScoped<IFileService,FileService>();
+           services.AddScoped<IBrandService,BrandService>();
+           services.AddScoped<ICategoryService,CategoryService>();
         }
     }
 }
