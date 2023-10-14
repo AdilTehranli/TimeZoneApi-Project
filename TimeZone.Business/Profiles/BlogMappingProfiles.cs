@@ -8,12 +8,8 @@ namespace TimeZone.Business.Profiles
     {
         public BlogMappingProfiles()
         {
-            CreateMap<Blog, BlogListItemDto>()
-            .ForMember(dest => dest.BlogImage, opt => opt.MapFrom(src => src.BlogImage));
-
+            CreateMap<Blog, BlogListItemDto>();
             CreateMap<Blog, BlogDetailDto>();
-                //.ForMember(dest => dest.BlogImage, opt => opt.MapFrom(src => src.Id)); 
-
             CreateMap<BlogCreateDto, Blog>();
             CreateMap<BlogUpdateDto, Blog>();
         }

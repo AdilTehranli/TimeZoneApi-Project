@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BlogProject.Business.ExtensionServices.Implements;
 using BlogProject.Business.ExtensionServices.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using TimeZone.Business.Dtos.ProductDtos;
 using TimeZone.Business.Dtos.SliderDtos;
 using TimeZone.Business.Services.Interfaces;
@@ -47,14 +48,22 @@ public class ProductService : IProductService
 
     public async Task<IEnumerable<ProductListItemDto>> GetAllAsync()
     {        
-        return _mapper.Map<IEnumerable<ProductListItemDto>>(_productRepository.GetAll());
+        
+        return _mapper.Map<IEnumerable<ProductListItemDto>>(
+            _productRepository.Table.Include(c=>c.Category).Include(b=>b.Brand).ToList());
 
     }
 
     public async Task<ProductDetailDto> GetById(int id)
     {
-            var entity=await _getProductAsync(id);
-            return _mapper.Map<ProductDetailDto>(entity);
+        var entity = await _getProductAsync(id);
+        if(entity == null)
+        {
+            throw new NullReferenceException("Bosdur");
+        }
+       await _productRepository.Table.Include(c => c.Category).Include(b => b.Brand).FirstOrDefaultAsync(p=>p.Id==id);
+
+        return _mapper.Map<ProductDetailDto>(entity);
     }
 
     public async Task UpdateAsnyc(int id, ProductUpdateDto updateDto)
