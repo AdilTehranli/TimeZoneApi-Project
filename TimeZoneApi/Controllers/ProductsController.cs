@@ -76,7 +76,7 @@ public class ProductsController : ControllerBase
         return Ok();
     }
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(int id)
+    public async Task<IActionResult> GetProductDetail(int id)
     {
         try
         {

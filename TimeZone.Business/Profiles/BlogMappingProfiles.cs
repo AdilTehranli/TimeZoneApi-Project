@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using TimeZone.Business.Dtos.BlogDtos;
+using TimeZone.Core.Entities;
 
 namespace TimeZone.Business.Profiles
 {
-    internal class BlogMappingProfiles
+    public class BlogMappingProfiles : Profile
     {
+        public BlogMappingProfiles()
+        {
+            CreateMap<Blog, BlogListItemDto>()
+            .ForMember(dest => dest.BlogImage, opt => opt.MapFrom(src => src.BlogImage));
+
+            CreateMap<Blog, BlogDetailDto>();
+                //.ForMember(dest => dest.BlogImage, opt => opt.MapFrom(src => src.Id)); 
+
+            CreateMap<BlogCreateDto, Blog>();
+            CreateMap<BlogUpdateDto, Blog>();
+        }
     }
+
 }
+

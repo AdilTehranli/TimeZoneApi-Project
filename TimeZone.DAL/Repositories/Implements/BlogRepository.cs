@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TimeZone.Core.Entities;
+using TimeZone.DAL.Contexts;
+using TimeZone.DAL.Repositories.Interfaces;
 
-namespace TimeZone.DAL.Repositories.Implements
+namespace TimeZone.DAL.Repositories.Implements;
+
+public class BlogRepository : Repository<Blog>, IBlogRepository
 {
-    internal class BlogRepository
+    public BlogRepository(AppDbContext context) : base(context)
     {
     }
 }
