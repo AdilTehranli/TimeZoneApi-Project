@@ -33,17 +33,11 @@ public class CategoriesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateBrand(CategoryCreateDto dto)
     {
-        try
-        {
+        
 
             await _categoryService.CreateAsnyc(dto);
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Yaradila bilmedi");
-        }
         return Ok();
+        
     }
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCategory(int id)
