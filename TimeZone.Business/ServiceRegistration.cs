@@ -18,6 +18,7 @@ namespace TimeZone.Business
            services.AddScoped<IProductService,ProductService>();
            services.AddScoped<IBlogService,BlogService>();
            services.AddScoped<IWrapperService,WrapperService>();
+           services.AddScoped<IBannerService,BannerService>();
         }
     }
 }

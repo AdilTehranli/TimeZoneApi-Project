@@ -14,6 +14,7 @@ namespace TimeZone.DAL
             services.AddScoped<IProductRepository,ProductRepository>();
             services.AddScoped<IBlogRepository,BlogRepository>();
             services.AddScoped<IWrapperRepository,WrapperRepository>();
+            services.AddScoped<IBannerRepository,BannerRepository>();
         }
     }
 }

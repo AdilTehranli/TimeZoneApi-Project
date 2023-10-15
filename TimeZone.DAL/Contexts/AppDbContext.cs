@@ -15,6 +15,7 @@ public class AppDbContext : DbContext
     public DbSet<Brand> Brands { get; set; }
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<Wrapper> Wrappers { get; set; }
+    public DbSet<Banner> Banners { get; set; }
    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
