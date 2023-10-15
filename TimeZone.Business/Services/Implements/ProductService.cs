@@ -62,8 +62,7 @@ public class ProductService : IProductService
             throw new NullReferenceException("Bosdur");
         }
        await _productRepository.Table.Include(c => c.Category).Include(b => b.Brand).FirstOrDefaultAsync(p=>p.Id==id);
-
-        return _mapper.Map<ProductDetailDto>(entity);
+       return _mapper.Map<ProductDetailDto>(entity);
     }
 
     public async Task UpdateAsnyc(int id, ProductUpdateDto updateDto)

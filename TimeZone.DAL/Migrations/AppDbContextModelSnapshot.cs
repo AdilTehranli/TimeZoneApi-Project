@@ -158,6 +158,34 @@ namespace TimeZone.DAL.Migrations
                     b.ToTable("Sliders");
                 });
 
+            modelBuilder.Entity("TimeZone.Core.Entities.Wrapper", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Icon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Wrappers");
+                });
+
             modelBuilder.Entity("TimeZone.Core.Entities.Product", b =>
                 {
                     b.HasOne("TimeZone.Core.Entities.Brand", "Brand")

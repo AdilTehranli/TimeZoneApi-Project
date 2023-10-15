@@ -13,6 +13,7 @@ namespace TimeZone.DAL
             services.AddScoped<ICategoryRepository,CategoryRepository>();
             services.AddScoped<IProductRepository,ProductRepository>();
             services.AddScoped<IBlogRepository,BlogRepository>();
+            services.AddScoped<IWrapperRepository,WrapperRepository>();
         }
     }
 }
