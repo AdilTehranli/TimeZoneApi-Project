@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using TimeZone.Core.Entities;
-
 namespace TimeZone.DAL.Contexts;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<AppUser>
 {
     public AppDbContext(DbContextOptions options) : base(options)
     {
@@ -16,7 +16,6 @@ public class AppDbContext : DbContext
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<Wrapper> Wrappers { get; set; }
     public DbSet<Banner> Banners { get; set; }
-   
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-
+using TimeZone.DAL.Contexts;
 #nullable disable
 
 namespace TimeZone.DAL.Migrations

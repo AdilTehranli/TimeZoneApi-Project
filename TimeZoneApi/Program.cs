@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using TimeZone.Business;
 using TimeZone.Business.Profiles;
 using TimeZone.DAL;
-using TimeZone.DAL.Contexts;
 using Microsoft.Extensions.DependencyInjection;
 using TimeZone.Business.Services.Implements;
 using FluentValidation.AspNetCore;
@@ -10,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.FileProviders;
 using ServiceStack.Text;
 using TimeZone.Core.Entities;
+using TimeZone.DAL.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,6 +56,7 @@ app.UseCors();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthorization();
+
 
 app.MapControllers();
 

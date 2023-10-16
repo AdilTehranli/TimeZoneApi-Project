@@ -19,16 +19,9 @@ public class BannersController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetBanner()
     {
-        try
-        {
 
             return Ok(await _bannerService.GetAllAsync());
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Data getirile bilmedi");
-        }
+      
     }
     [HttpPost]
     public async Task<IActionResult> CreateBrand([FromForm] BannerCreateDto dto)
