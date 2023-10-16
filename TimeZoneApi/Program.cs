@@ -10,6 +10,7 @@ using Microsoft.Extensions.FileProviders;
 using ServiceStack.Text;
 using TimeZone.Core.Entities;
 using TimeZone.DAL.Contexts;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,11 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
+
+builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
+{
+    opt.Password.RequireNonAlphanumeric = false;
+}).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 
 
 var app = builder.Build();
