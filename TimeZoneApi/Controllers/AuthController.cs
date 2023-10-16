@@ -20,4 +20,10 @@ public class AuthController : ControllerBase
         await _userService.RegisterAsync(dto);
         return NoContent();
     }
+    [HttpPost("[action]")]
+    public async Task<IActionResult> Login(LoginDto dto)
+    {
+        return Ok(await _userService.LoginAsync(dto));
+  
+    }
 }
