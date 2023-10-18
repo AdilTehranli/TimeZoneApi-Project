@@ -62,6 +62,7 @@ app.UseCors();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthorization();
+//TODO: Exception handler yaz
 
 
 app.MapControllers();

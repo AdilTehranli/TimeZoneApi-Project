@@ -20,6 +20,7 @@ namespace TimeZone.Business
            services.AddScoped<IWrapperService,WrapperService>();
            services.AddScoped<IBannerService,BannerService>();
            services.AddScoped<IUserService,UserService>();
+           services.AddScoped<IContactService,ContactService>();
         }
     }
 }

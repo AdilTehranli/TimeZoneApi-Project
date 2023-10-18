@@ -42,16 +42,15 @@ public class UserService : IUserService
             new Claim(ClaimTypes.Surname,user.Surname),
 
         };
-        SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecurityKey"]));
-        SigningCredentials credentials =new SigningCredentials(securityKey,SecurityAlgorithms.HmacSha256);
-
-        JwtSecurityToken jwttoken = new JwtSecurityToken(
+        SymmetricSecurityKey securityKey = new (Encoding.UTF8.GetBytes(_configuration["Jwt:SecurityKey"]));
+        SigningCredentials credentials =new (securityKey,SecurityAlgorithms.HmacSha256);
+        JwtSecurityToken jwttoken = new (
             _configuration["Jwt:Issuer"],
             _configuration["Jwt:Audience"],
             claims, DateTime.UtcNow,
             DateTime.UtcNow.AddMinutes(60),
             credentials);
-        JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+        JwtSecurityTokenHandler handler = new ();
       string token = handler.WriteToken(jwttoken);
         return token;
     }

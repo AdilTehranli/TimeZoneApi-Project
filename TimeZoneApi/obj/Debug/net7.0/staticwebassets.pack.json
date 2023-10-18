@@ -1,12 +1,24 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\1ee669b6-500d-49ce-b8ad-ec10628c1b84.png",
+      "PackagePath": "staticwebassets\\images\\1ee669b6-500d-49ce-b8ad-ec10628c1b84.png"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\24a9d5b9-872a-4033-9a19-14346a89ce96.png",
       "PackagePath": "staticwebassets\\images\\24a9d5b9-872a-4033-9a19-14346a89ce96.png"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\3054525d-bbad-4ab7-978f-409ca7ff00d4.jpg",
+      "PackagePath": "staticwebassets\\images\\3054525d-bbad-4ab7-978f-409ca7ff00d4.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\344a99b1-9cd3-4892-ba02-53d65b733826.png",
       "PackagePath": "staticwebassets\\images\\344a99b1-9cd3-4892-ba02-53d65b733826.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\3a2d3902-dcfb-415f-9ba6-695cfad06022.jpg",
+      "PackagePath": "staticwebassets\\images\\3a2d3902-dcfb-415f-9ba6-695cfad06022.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\403b90f1-dc38-485a-a152-31a0fad3215c.png",
@@ -15,6 +27,10 @@
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\4dc0b7e4-633b-47d0-88a3-f6650796ea2c.png",
       "PackagePath": "staticwebassets\\images\\4dc0b7e4-633b-47d0-88a3-f6650796ea2c.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\50653c44-e98d-4546-bea7-14f67eb90eab.png",
+      "PackagePath": "staticwebassets\\images\\50653c44-e98d-4546-bea7-14f67eb90eab.png"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\66b4c0d9-163c-4cf6-8565-890e2e02451f.png",
@@ -49,8 +65,16 @@
       "PackagePath": "staticwebassets\\images\\9a1a8d10-068c-4161-bc37-7ee60b111139.png"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\a5f7c622-45a1-4302-a933-68a6440b932d.png",
+      "PackagePath": "staticwebassets\\images\\a5f7c622-45a1-4302-a933-68a6440b932d.png"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\a82dc914-edac-434b-83f4-25c4e536926f.png",
       "PackagePath": "staticwebassets\\images\\a82dc914-edac-434b-83f4-25c4e536926f.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\ac9bfa1b-cc93-4f01-9277-cc1db1b04aa3.png",
+      "PackagePath": "staticwebassets\\images\\ac9bfa1b-cc93-4f01-9277-cc1db1b04aa3.png"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\b1ed9fb2-6da0-4259-861c-a680aa0a68da.jpg",
@@ -75,6 +99,10 @@
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\d6d30618-2b37-4614-bc43-40d7bba563ba.png",
       "PackagePath": "staticwebassets\\images\\d6d30618-2b37-4614-bc43-40d7bba563ba.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\dc185c28-3684-4b99-bbbc-ea612a8c7819.png",
+      "PackagePath": "staticwebassets\\images\\dc185c28-3684-4b99-bbbc-ea612a8c7819.png"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\e090d52c-37f0-41ca-b980-3ee68347074b.png",

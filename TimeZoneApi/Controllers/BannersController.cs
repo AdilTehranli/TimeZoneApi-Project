@@ -68,4 +68,5 @@ public class BannersController : ControllerBase
         }
         return Ok();
     }
+
 }
