@@ -6,7 +6,7 @@ using TimeZone.Business.Services.Interfaces;
 
 namespace TimeZoneApi.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
 public class ProductsController : ControllerBase
 {
