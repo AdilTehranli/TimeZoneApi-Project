@@ -9,6 +9,7 @@ public class ContactMappingProfiles : Profile
     public ContactMappingProfiles()
     {
         CreateMap<Contact, ContactListItemDto>();
+        CreateMap<Contact, ContactDetailDto>();
         CreateMap<ContactCreateDto, Contact>();
     }
 }

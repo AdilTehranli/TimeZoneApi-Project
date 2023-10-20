@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using TimeZone.Business.Dtos.BannerDto;
+using TimeZone.Business.Dtos.BlogDtos;
 using TimeZone.Business.Dtos.BrandDtos;
 using TimeZone.Business.Dtos.ContactDtos;
+using TimeZone.Business.Dtos.ProductDtos;
 using TimeZone.Business.Services.Interfaces;
 using TimeZone.Core.Entities;
 using TimeZone.DAL.Repositories.Implements;
@@ -43,5 +45,18 @@ public class ContactService : IContactService
     public async Task<IEnumerable<ContactListItemDto>> GetAllAsync()
     {
         return _mapper.Map<IEnumerable<ContactListItemDto>>(_contactRepository.GetAll());
+    }
+
+    public async Task<ContactDetailDto> GetById(int id)
+    {
+        var entity = await _getContactAsync(id);
+        return _mapper.Map<ContactDetailDto>(entity);
+    }
+    async Task<Contact> _getContactAsync(int id)
+    {
+        if (id <= 0) throw new ArgumentException();
+        var entity = await _contactRepository.FindByIdAsync(id);
+        if (entity == null) throw new NullReferenceException();
+        return entity;
     }
 }

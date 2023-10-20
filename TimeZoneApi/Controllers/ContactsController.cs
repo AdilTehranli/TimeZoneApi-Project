@@ -63,4 +63,17 @@ public class ContactsController : ControllerBase
         }
         return Ok();
     }
+        [HttpGet("{id}")]
+    public async Task<IActionResult> GetContactDetail(int id)
+    {
+        try
+        {
+            return Ok(await _contactService.GetById(id));
+        }
+        catch (Exception)
+        {
+
+            throw new ArgumentException("Product id gelmedi");
+        }
+    }
 }
