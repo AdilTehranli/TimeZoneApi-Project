@@ -1,6 +1,7 @@
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\bin\Debug\net7.0\TimeZone.Core.deps.json
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\bin\Debug\net7.0\TimeZone.Core.dll
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\bin\Debug\net7.0\TimeZone.Core.pdb
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\obj\Debug\net7.0\TimeZone.Core.csproj.AssemblyReference.cache
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\obj\Debug\net7.0\TimeZone.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\obj\Debug\net7.0\TimeZone.Core.AssemblyInfoInputs.cache
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\obj\Debug\net7.0\TimeZone.Core.AssemblyInfo.cs
@@ -9,4 +10,3 @@ C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\obj\Debug\net7.0\TimeZone.Cor
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\obj\Debug\net7.0\refint\TimeZone.Core.dll
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\obj\Debug\net7.0\TimeZone.Core.pdb
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\obj\Debug\net7.0\ref\TimeZone.Core.dll
-C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZone.Core\obj\Debug\net7.0\TimeZone.Core.csproj.AssemblyReference.cache

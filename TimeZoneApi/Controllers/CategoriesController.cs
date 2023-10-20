@@ -6,7 +6,7 @@ using TimeZone.Business.Services.Interfaces;
 
 namespace TimeZoneApi.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
 public class CategoriesController : ControllerBase
 {
@@ -31,13 +31,13 @@ public class CategoriesController : ControllerBase
         }
     }
     [HttpPost]
-    public async Task<IActionResult> CreateBrand([FromForm]CategoryCreateDto dto)
+    public async Task<IActionResult> CreateCategory([FromForm] CategoryCreateDto dto)
     {
-        
 
-            await _categoryService.CreateAsnyc(dto);
+
+        await _categoryService.CreateAsnyc(dto);
         return Ok();
-        
+
     }
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCategory(int id)
@@ -68,5 +68,18 @@ public class CategoriesController : ControllerBase
             throw new ArgumentException("Deyisdirile bilmedi");
         }
         return Ok();
+    }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetCategoryDetail(int id)
+    {
+        try
+        {
+            return Ok(await _categoryService.GetById(id));
+        }
+        catch (Exception)
+        {
+
+            throw new ArgumentException("Product id gelmedi");
+        }
     }
 }

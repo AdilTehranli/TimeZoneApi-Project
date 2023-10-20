@@ -24,7 +24,7 @@ public class BannersController : ControllerBase
       
     }
     [HttpPost]
-    public async Task<IActionResult> CreateBrand([FromForm] BannerCreateDto dto)
+    public async Task<IActionResult> CreateBanner([FromForm] BannerCreateDto dto)
     {
         try
         {
@@ -39,7 +39,7 @@ public class BannersController : ControllerBase
         return Ok();
     }
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteBrand(int id)
+    public async Task<IActionResult> DeleteBanner(int id)
     {
         try
         {
@@ -68,5 +68,17 @@ public class BannersController : ControllerBase
         }
         return Ok();
     }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetBannerDetail(int id)
+    {
+        try
+        {
+            return Ok(await _bannerService.GetById(id));
+        }
+        catch (Exception)
+        {
 
+            throw new ArgumentException("Product id gelmedi");
+        }
+    }
 }

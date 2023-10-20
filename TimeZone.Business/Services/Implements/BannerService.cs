@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BlogProject.Business.ExtensionServices.Interfaces;
 using TimeZone.Business.Dtos.BannerDto;
+using TimeZone.Business.Dtos.BannerDtos;
 using TimeZone.Business.Dtos.BlogDtos;
 using TimeZone.Business.Services.Interfaces;
 using TimeZone.Core.Entities;
@@ -51,6 +52,12 @@ public class BannerService : IBannerService
 
     }
 
+    public async Task<BannerDetailDto> GetById(int id)
+    {
+        var entity = await _getBannerAsync(id);
+        return _mapper.Map<BannerDetailDto>(entity);
+    }
+
     public async Task UpdateAsnyc(int id, BannerUpdateDto updateDto)
     {
         if (id < 1)
@@ -69,5 +76,12 @@ public class BannerService : IBannerService
 
         await _bannerRepository.UpdateAsync(entity);
         await _bannerRepository.SaveAsync();
+    }
+    async Task<Banner> _getBannerAsync(int id)
+    {
+        if (id <= 0) throw new ArgumentException();
+        var entity = await _bannerRepository.FindByIdAsync(id);
+        if (entity == null) throw new NullReferenceException();
+        return entity;
     }
 }

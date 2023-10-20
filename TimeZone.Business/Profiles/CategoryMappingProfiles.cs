@@ -9,6 +9,7 @@ namespace TimeZone.Business.Profiles
         public CategoryMappingProfiles()
         {
             CreateMap<Category,CategoryListItemDto>();
+            CreateMap<Category,CategoryDetailDto>();
             CreateMap<CategoryCreateDto,Category>();
             CreateMap<CategoryUpdateDto,Category>();
         }
