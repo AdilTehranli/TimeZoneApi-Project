@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TimeZone.Business.Dtos.SliderDtos;
+using TimeZone.Business.Services.Implements;
 using TimeZone.Business.Services.Interfaces;
 using TimeZone.DAL.Contexts;
 
@@ -77,5 +78,18 @@ public class SlidersController : ControllerBase
             throw new ArgumentException("Deyisdirile bilmedi");
         }
         return Ok();
+    }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetSliderDetail(int id)
+    {
+        try
+        {
+            return Ok(await _sliderService.GetById(id));
+        }
+        catch (Exception)
+        {
+
+            throw new ArgumentException("Product id gelmedi");
+        }
     }
 }

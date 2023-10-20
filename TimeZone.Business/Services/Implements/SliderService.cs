@@ -3,10 +3,12 @@ using BlogProject.Business.ExtensionServices.Interfaces;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
+using TimeZone.Business.Dtos.BlogDtos;
 using TimeZone.Business.Dtos.SliderDtos;
 using TimeZone.Business.Services.Interfaces;
 using TimeZone.Core.Entities;
 using TimeZone.DAL.Contexts;
+using TimeZone.DAL.Repositories.Implements;
 using TimeZone.DAL.Repositories.Interfaces;
 
 namespace TimeZone.Business.Services.Implements;
@@ -53,6 +55,12 @@ public class SliderService : ISliderService
         
     }
 
+    public async Task<SliderDetailDto> GetById(int id)
+    {
+        var entity = await _getSliderAsync(id);
+        return _mapper.Map<SliderDetailDto>(entity);
+    }
+
     public async Task UpdateAsnyc(int id, SliderUpdateDto updateDto)
     {
         if (id < 1)
@@ -72,6 +80,12 @@ public class SliderService : ISliderService
         await _sliderRepo.UpdateAsync(entity);
         await _sliderRepo.SaveAsync();
     }
-
+    async Task<Slider> _getSliderAsync(int id)
+    {
+        if (id <= 0) throw new ArgumentException();
+        var entity = await _sliderRepo.FindByIdAsync(id);
+        if (entity == null) throw new NullReferenceException();
+        return entity;
+    }
 
 }

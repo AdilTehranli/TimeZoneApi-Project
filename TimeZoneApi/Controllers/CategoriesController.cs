@@ -31,7 +31,7 @@ public class CategoriesController : ControllerBase
         }
     }
     [HttpPost]
-    public async Task<IActionResult> CreateBrand(CategoryCreateDto dto)
+    public async Task<IActionResult> CreateBrand([FromForm]CategoryCreateDto dto)
     {
         
 
