@@ -75,4 +75,17 @@ public class BrandsController : ControllerBase
         }
         return Ok();
     }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetBrandDetail(int id)
+    {
+        try
+        {
+            return Ok(await _brandService.GetById(id));
+        }
+        catch (Exception)
+        {
+
+            throw new ArgumentException("Product id gelmedi");
+        }
+    }
 }

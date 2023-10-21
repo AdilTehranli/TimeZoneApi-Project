@@ -2,10 +2,12 @@
 using BlogProject.Business.ExtensionServices.Implements;
 using BlogProject.Business.ExtensionServices.Interfaces;
 using Microsoft.AspNetCore.Http.HttpResults;
+using TimeZone.Business.Dtos.BannerDtos;
 using TimeZone.Business.Dtos.BrandDtos;
 using TimeZone.Business.Dtos.SliderDtos;
 using TimeZone.Business.Services.Interfaces;
 using TimeZone.Core.Entities;
+using TimeZone.DAL.Repositories.Implements;
 using TimeZone.DAL.Repositories.Interfaces;
 
 namespace TimeZone.Business.Services.Implements;
@@ -47,6 +49,12 @@ public class BrandService : IBrandService
         return _mapper.Map<IEnumerable<BrandListItemDto>>(_brandRepository.GetAll());
     }
 
+    public async Task<BrandDetailDto> GetById(int id)
+    {
+        var entity = await _getBrandAsync(id);
+        return _mapper.Map<BrandDetailDto>(entity);
+    }
+
     public async Task UpdateAsnyc(int id, BrandUpdateDto updateDto)
     {
         if (id < 1)
@@ -63,5 +71,12 @@ public class BrandService : IBrandService
 
         await _brandRepository.UpdateAsync(entity);
         await _brandRepository.SaveAsync();
+    }
+    async Task<Brand> _getBrandAsync(int id)
+    {
+        if (id <= 0) throw new ArgumentException();
+        var entity = await _brandRepository.FindByIdAsync(id);
+        if (entity == null) throw new NullReferenceException();
+        return entity;
     }
 }
