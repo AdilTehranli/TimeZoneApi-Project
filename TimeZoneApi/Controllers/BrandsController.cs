@@ -31,7 +31,7 @@ public class BrandsController : ControllerBase
         }
     }
     [HttpPost]
-    public async Task<IActionResult> CreateBrand( BrandCreateDto dto)
+    public async Task<IActionResult> CreateBrand([FromForm] BrandCreateDto dto)
     {
         try
         {
@@ -63,17 +63,12 @@ public class BrandsController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateBrand(int id,  BrandUpdateDto updateDto)
     {
-        try
-        {
+        
 
             await _brandService.UpdateAsnyc(id, updateDto);
-        }
-        catch (Exception)
-        {
+        return Ok(); 
+       
 
-            throw new ArgumentException("Deyisdirile bilmedi");
-        }
-        return Ok();
     }
     [HttpGet("{id}")]
     public async Task<IActionResult> GetBrandDetail(int id)
