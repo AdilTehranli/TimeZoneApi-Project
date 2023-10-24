@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TimeZone.Core.Entities;
 
-namespace TimeZone.DAL.Repositories.Interfaces
+namespace TimeZone.DAL.Repositories.Interfaces;
+
+public interface IAboutRepository:IRepository<About>
 {
-    internal interface IAboutRepository
-    {
-    }
 }

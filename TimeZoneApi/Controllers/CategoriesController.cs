@@ -48,7 +48,7 @@ public class CategoriesController : ControllerBase
             await _categoryService.UpdateAsnyc(id, updateDto);
             return StatusCode(StatusCodes.Status204NoContent);
 
-        }
+    }
     [HttpGet("{id}")]
     public async Task<IActionResult> GetCategoryDetail(int id)
     {

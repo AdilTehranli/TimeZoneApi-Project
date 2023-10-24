@@ -22,6 +22,7 @@ namespace TimeZone.Business
            services.AddScoped<IUserService,UserService>();
            services.AddScoped<IContactService,ContactService>();
            services.AddScoped<IRoleService,RoleService>();
+           services.AddScoped<IAboutService,AboutService>();
         }
     }
 }

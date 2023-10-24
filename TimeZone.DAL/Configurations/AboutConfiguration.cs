@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using TimeZone.Core.Entities;
 
-namespace TimeZone.DAL.Configurations
+namespace TimeZone.DAL.Configurations;
+
+public class AboutConfiguration : IEntityTypeConfiguration<About>
 {
-    internal class AboutConfiguration
+    public void Configure(EntityTypeBuilder<About> builder)
     {
+       builder.Property(a=>a.Title).IsRequired().HasMaxLength(120);
+        builder.Property(a => a.Description).IsRequired();
     }
 }

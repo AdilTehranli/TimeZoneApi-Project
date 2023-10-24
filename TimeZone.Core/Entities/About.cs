@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TimeZone.Core.Entities.Commons;
 
-namespace TimeZone.Core.Entities
+namespace TimeZone.Core.Entities;
+
+public class About : BaseEntity
 {
-    internal class About
-    {
-    }
+    public string Title { get; set; }
+    public string Description { get; set; }
 }
