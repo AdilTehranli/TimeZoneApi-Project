@@ -29,59 +29,30 @@ public class BlogsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateBlog([FromForm] BlogCreateDto dto)
     {
-        try
-        {
-
             await _blogService.CreateAsnyc(dto);
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Yaradila bilmedi");
-        }
-        return Ok();
+        return StatusCode(StatusCodes.Status201Created);
+      
     }
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBlog(int id)
     {
-        try
-        {
+      
             await _blogService.Delete(id);
-
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Siline bilmedi");
-        }
-        return Ok();
+        return StatusCode(StatusCodes.Status204NoContent);
     }
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateBlog(int id, [FromForm] BlogUpdateDto updateDto)
     {
-        try
-        {
+       
 
             await _blogService.UpdateAsnyc(id, updateDto);
-        }
-        catch (Exception)
-        {
+            return StatusCode(StatusCodes.Status204NoContent);
 
-            throw new ArgumentException("Deyisdirile bilmedi");
-        }
-        return Ok();
+
     }
     [HttpGet("{id}")]
     public async Task<IActionResult> GetBlogDetail(int id)
     {
-        try
-        {
-            return Ok(await _blogService.GetById(id));
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Product id gelmedi");
-        }
+            return Ok(await _blogService.GetById(id)); 
     }
 }

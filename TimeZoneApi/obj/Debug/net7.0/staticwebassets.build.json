@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G7xQqimgz96DCccYewNy8IxIwSpfmUzVIYmNjyUfUyo=",
+  "Hash": "uucgunVLTrunTDqyuOSXN0kIki49bveA4lQS4c94TeE=",
   "Source": "TimeZoneApi",
   "BasePath": "_content/TimeZoneApi",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\0ccdedd0-3b43-495f-a4e9-d4a6aca5b35a.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\1364087c-2eeb-4054-8030-3dbbae9a9a05.png",
+      "SourceId": "TimeZoneApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\",
+      "BasePath": "_content/TimeZoneApi",
+      "RelativePath": "images/1364087c-2eeb-4054-8030-3dbbae9a9a05.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\1364087c-2eeb-4054-8030-3dbbae9a9a05.png"
     },
     {
       "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\14071185-5845-4c21-bc50-159c9139cfd9.png",
@@ -389,6 +406,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\6cc47226-88d5-453f-96e9-c03ea2376734.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\6db409f3-686e-4cf3-8121-62b6764369d4.jpg",
+      "SourceId": "TimeZoneApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\",
+      "BasePath": "_content/TimeZoneApi",
+      "RelativePath": "images/6db409f3-686e-4cf3-8121-62b6764369d4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\6db409f3-686e-4cf3-8121-62b6764369d4.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\6e578eb4-1596-4ba1-8c84-07feec7f3370.png",
@@ -748,6 +782,23 @@
       "OriginalItemSpec": "wwwroot\\images\\bdf545cf-7f04-4dbe-b003-4b7778b64a33.png"
     },
     {
+      "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\c3b8a5f2-d641-4641-bb8f-7980e617ce84.jpg",
+      "SourceId": "TimeZoneApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\",
+      "BasePath": "_content/TimeZoneApi",
+      "RelativePath": "images/c3b8a5f2-d641-4641-bb8f-7980e617ce84.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\c3b8a5f2-d641-4641-bb8f-7980e617ce84.jpg"
+    },
+    {
       "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\c5fa3634-71d4-4f23-88db-7eeeeb47664f.png",
       "SourceId": "TimeZoneApi",
       "SourceType": "Discovered",
@@ -950,6 +1001,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\e673a0af-20ac-4831-9cce-7f664b08ea5a.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\ee8d768e-0954-4592-805e-2bd1bddc2e0e.png",
+      "SourceId": "TimeZoneApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\",
+      "BasePath": "_content/TimeZoneApi",
+      "RelativePath": "images/ee8d768e-0954-4592-805e-2bd1bddc2e0e.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ee8d768e-0954-4592-805e-2bd1bddc2e0e.png"
     },
     {
       "Identity": "C:\\Users\\User\\c#-ASP.NET\\TimeZoneApi\\TimeZoneApi\\wwwroot\\images\\f8118b39-e9db-49b4-af28-4d7ef13d9482.png",

@@ -20,65 +20,39 @@ public class BannersController : ControllerBase
     public async Task<IActionResult> GetBanner()
     {
 
-            return Ok(await _bannerService.GetAllAsync());
+        return Ok(await _bannerService.GetAllAsync());
+
       
     }
     [HttpPost]
     public async Task<IActionResult> CreateBanner([FromForm] BannerCreateDto dto)
     {
-        try
-        {
-
-            await _bannerService.CreateAsnyc(dto);
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Yaradila bilmedi");
-        }
-        return Ok();
+        await _bannerService.CreateAsnyc(dto);
+        return StatusCode(StatusCodes.Status201Created);
+      
     }
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBanner(int id)
     {
-        try
-        {
-            await _bannerService.Delete(id);
+       
+        await _bannerService.Delete(id);
+        return StatusCode(StatusCodes.Status204NoContent);
 
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Siline bilmedi");
-        }
-        return Ok();
+ 
     }
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateBanner(int id, [FromForm] BannerUpdateDto updateDto)
     {
-        try
-        {
+      
 
-            await _bannerService.UpdateAsnyc(id, updateDto);
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Deyisdirile bilmedi");
-        }
-        return Ok();
+        await _bannerService.UpdateAsnyc(id, updateDto);
+        return StatusCode(StatusCodes.Status200OK);
+      
     }
     [HttpGet("{id}")]
     public async Task<IActionResult> GetBannerDetail(int id)
     {
-        try
-        {
+      
             return Ok(await _bannerService.GetById(id));
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Product id gelmedi");
-        }
     }
 }

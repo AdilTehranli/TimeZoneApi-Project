@@ -19,16 +19,7 @@ public class CategoriesController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetCategory()
     {
-        try
-        {
-
-            return Ok(await _categoryService.GetAllAsync());
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Data getirile bilmedi");
-        }
+            return Ok(await _categoryService.GetAllAsync()); 
     }
     [HttpPost]
     public async Task<IActionResult> CreateCategory([FromForm] CategoryCreateDto dto)
@@ -36,50 +27,31 @@ public class CategoriesController : ControllerBase
 
 
         await _categoryService.CreateAsnyc(dto);
-        return Ok();
+        return StatusCode(StatusCodes.Status201Created);
+
 
     }
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCategory(int id)
     {
-        try
-        {
+   
             await _categoryService.Delete(id);
+        return StatusCode(StatusCodes.Status204NoContent);
 
-        }
-        catch (Exception)
-        {
 
-            throw new ArgumentException("Siline bilmedi");
-        }
-        return Ok();
     }
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateCategory(int id, CategoryUpdateDto updateDto)
     {
-        try
-        {
+   
 
             await _categoryService.UpdateAsnyc(id, updateDto);
-        }
-        catch (Exception)
-        {
+            return StatusCode(StatusCodes.Status204NoContent);
 
-            throw new ArgumentException("Deyisdirile bilmedi");
         }
-        return Ok();
-    }
     [HttpGet("{id}")]
     public async Task<IActionResult> GetCategoryDetail(int id)
     {
-        try
-        {
             return Ok(await _categoryService.GetById(id));
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Product id gelmedi");
-        }
     }
 }

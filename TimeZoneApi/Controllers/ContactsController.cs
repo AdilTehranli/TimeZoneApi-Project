@@ -21,59 +21,29 @@ public class ContactsController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetContact()
     {
-        try
-        {
 
             return Ok(await _contactService.GetAllAsync());
-        }
-        catch (Exception)
-        {
 
-            throw new ArgumentException("Data getirile bilmedi");
-        }
     }
     [HttpPost]
     
     public async Task<IActionResult> CreateContact([FromForm] ContactCreateDto dto)
     {
-        try
-        {
-            
-            await _contactService.CreateAsnyc(dto);
-        }
-        catch (Exception)
-        {
 
-            throw new ArgumentException("Yaradila bilmedi");
+            await _contactService.CreateAsnyc(dto);
+            return StatusCode(StatusCodes.Status201Created);
+
         }
-        return Ok();
-    }
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteContact(int id)
     {
-        try
-        {
             await _contactService.Delete(id);
+            return StatusCode(StatusCodes.Status204NoContent);
 
         }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Siline bilmedi");
-        }
-        return Ok();
-    }
         [HttpGet("{id}")]
     public async Task<IActionResult> GetContactDetail(int id)
     {
-        try
-        {
             return Ok(await _contactService.GetById(id));
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Product id gelmedi");
-        }
     }
 }

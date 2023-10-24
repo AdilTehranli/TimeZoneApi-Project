@@ -18,12 +18,13 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Register([FromForm]RegisterDto dto)
     {
         await _userService.RegisterAsync(dto);
-        return NoContent();
+        return StatusCode(StatusCodes.Status201Created);
     }
     [HttpPost("[action]")]
-    public async Task<IActionResult> Login([FromForm] LoginDto dto)
+    public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
-        return Ok(await _userService.LoginAsync(dto));
-  
+       return Ok( await _userService.LoginAsync(dto));
+     
+
     }
 }
