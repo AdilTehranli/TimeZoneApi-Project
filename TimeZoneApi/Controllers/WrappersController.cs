@@ -19,16 +19,7 @@ public class WrappersController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetWrapper()
     {
-        try
-        {
-
             return Ok(await _wrapperService.GetAllAsync());
-        }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Data getirile bilmedi");
-        }
     }
     [HttpPost]
     public async Task<IActionResult> CreateWrapper(WrapperCreateDto dto)
@@ -36,38 +27,23 @@ public class WrappersController : ControllerBase
       
 
             await _wrapperService.CreateAsnyc(dto);
-        return Ok();
-        
-       
+        return StatusCode(StatusCodes.Status201Created);
+
+
+
     }
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteWrapper(int id)
     {
-        try
-        {
+       
             await _wrapperService.Delete(id);
+            return StatusCode(StatusCodes.Status204NoContent);
 
         }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Siline bilmedi");
-        }
-        return Ok();
-    }
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateWrapper(int id, WrapperUpdateDto updateDto)
     {
-        try
-        {
-
             await _wrapperService.UpdateAsnyc(id, updateDto);
+            return StatusCode(StatusCodes.Status204NoContent);
         }
-        catch (Exception)
-        {
-
-            throw new ArgumentException("Deyisdirile bilmedi");
-        }
-        return Ok();
-    }
 }
