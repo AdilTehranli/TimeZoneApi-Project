@@ -42,6 +42,7 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 {
     opt.Password.RequireNonAlphanumeric = false;
+    opt.SignIn.RequireConfirmedEmail = true;
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 
 

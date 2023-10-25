@@ -10,4 +10,5 @@ public interface IUserService
     Task<ICollection<UserWithRoleDto>> GetAllAsync();
     Task AddRole(string roleName, string userName);
     Task RemoveRole(string roleName, string userName);
+    Task VerifyEmail(string email, string token);
 }

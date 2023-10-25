@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
+using Azure.Core;
+using CloudinaryDotNet;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 using TimeZone.Business.Dtos.UserDtos;
@@ -23,13 +27,15 @@ public class UserService : IUserService
     readonly IConfiguration _configuration;
     readonly RoleManager<IdentityRole> _roleManager;
     readonly IRoleService _roleService;
-    public UserService(UserManager<AppUser> userManager, IMapper mapper, IConfiguration configuration, RoleManager<IdentityRole> roleManager, IRoleService roleService)
+    readonly SignInManager<AppUser> _signInManager;
+    public UserService(UserManager<AppUser> userManager, IMapper mapper, IConfiguration configuration, RoleManager<IdentityRole> roleManager, IRoleService roleService, SignInManager<AppUser> signInManager)
     {
         _userManager = userManager;
         _mapper = mapper;
         _configuration = configuration;
         _roleManager = roleManager;
         _roleService = roleService;
+        _signInManager = signInManager;
     }
 
     public async Task AddRole(string roleName, string userName)
@@ -111,10 +117,49 @@ public class UserService : IUserService
             }
             throw new RegisterFailedException(sb.ToString().TrimEnd());
         }
+        var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+        var callbackUrl = $"http://localhost:3000/Register/VerifyEmail?email={user.Email}&token={WebUtility.UrlEncode(token)}";
+        var mail = new MailMessage();
+        mail.From = new MailAddress("adil.tehranli0@gmail.com", "TimeZone");
+        mail.To.Add(new MailAddress(user.Email));
+        mail.Subject = "Confirm Email";
+        string body = $"You can verify your email address by clicking on the link: <a href=\"{callbackUrl}\">Click here</a>";
+        mail.Body = body;
+        mail.IsBodyHtml = true;
+
+        using (var smtp = new SmtpClient())
+        {
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("adil.tehranli0@gmail.com", "rshzfqxpqaefvvnc");
+            await smtp.SendMailAsync(mail);
+        }
+
+    }
+    public async Task VerifyEmail(string email, string token)
+    {
+        var user = await _userManager.FindByEmailAsync(email);
+        if (user == null)
+        {
+            throw new NullReferenceException();
+        }
+
+        var result = await _userManager.ConfirmEmailAsync(user, token);
+        if (result.Succeeded)
+        {
+            await _signInManager.SignInAsync(user, true);
+        }
+        else
+        {
+            throw new Exception();
+        }
     }
 
     public Task RemoveRole(string roleName, string userName)
     {
         throw new NotImplementedException();
     }
+
 }
