@@ -24,25 +24,11 @@ public class UsersController : ControllerBase
         await _userService.AddRole(role, userName);
         return Ok();
     }
-    [HttpGet("VerifyEmail")]
-    public async Task<IActionResult> VerifyEmail(string email, string token)
-    {
-        try
-        {
-            await _userService.VerifyEmail(email, token);
-            // E-posta onaylama başarılıysa, başarılı yanıt döndürün.
-            return Ok("Email confirmed successfully");
-        }
-        catch (NullReferenceException)
-        {
-            // Kullanıcı bulunamadıysa, 404 Not Found yanıtı döndürün.
-            return NotFound("User not found");
-        }
-        catch (Exception ex)
-        {
-            // Diğer hatalar için 500 Internal Server Error yanıtı döndürün.
-            return StatusCode(500, ex.Message);
-        }
-    }
+
+
+
+
+
+
 
 }

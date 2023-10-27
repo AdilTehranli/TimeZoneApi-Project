@@ -17,6 +17,7 @@ using TimeZone.Business.Exceptions.UserException;
 using TimeZone.Business.Exceptions.UserExceptions;
 using TimeZone.Business.Services.Interfaces;
 using TimeZone.Core.Entities;
+using TimeZone.DAL.Contexts;
 
 namespace TimeZone.Business.Services.Implements;
 
@@ -28,7 +29,8 @@ public class UserService : IUserService
     readonly RoleManager<IdentityRole> _roleManager;
     readonly IRoleService _roleService;
     readonly SignInManager<AppUser> _signInManager;
-    public UserService(UserManager<AppUser> userManager, IMapper mapper, IConfiguration configuration, RoleManager<IdentityRole> roleManager, IRoleService roleService, SignInManager<AppUser> signInManager)
+    readonly AppDbContext _dbcontext;
+    public UserService(UserManager<AppUser> userManager, IMapper mapper, IConfiguration configuration, RoleManager<IdentityRole> roleManager, IRoleService roleService, SignInManager<AppUser> signInManager, AppDbContext dbcontext)
     {
         _userManager = userManager;
         _mapper = mapper;
@@ -36,6 +38,7 @@ public class UserService : IUserService
         _roleManager = roleManager;
         _roleService = roleService;
         _signInManager = signInManager;
+        _dbcontext = dbcontext;
     }
 
     public async Task AddRole(string roleName, string userName)
@@ -105,37 +108,8 @@ public class UserService : IUserService
 
     public async Task RegisterAsync(RegisterDto dto)
     {
-        var user= _mapper.Map<AppUser>(dto);
-        if (await _userManager.Users.AnyAsync(u => dto.UserName == u.UserName || dto.Email == u.Email))
-            throw new UserExistException();
-        var result = await _userManager.CreateAsync(user, dto.Password);
-        if (!result.Succeeded) {
-           StringBuilder sb = new StringBuilder();
-            foreach (var item in result.Errors)
-            {
-                sb.Append(item.Description + " ");
-            }
-            throw new RegisterFailedException(sb.ToString().TrimEnd());
-        }
-        var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-        var callbackUrl = $"http://localhost:3000/Register/VerifyEmail?email={user.Email}&token={WebUtility.UrlEncode(token)}";
-        var mail = new MailMessage();
-        mail.From = new MailAddress("adil.tehranli0@gmail.com", "TimeZone");
-        mail.To.Add(new MailAddress(user.Email));
-        mail.Subject = "Confirm Email";
-        string body = $"You can verify your email address by clicking on the link: <a href=\"{callbackUrl}\">Click here</a>";
-        mail.Body = body;
-        mail.IsBodyHtml = true;
-
-        using (var smtp = new SmtpClient())
-        {
-            smtp.Host = "smtp.gmail.com";
-            smtp.Port = 587;
-            smtp.EnableSsl = true;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential("adil.tehranli0@gmail.com", "rshzfqxpqaefvvnc");
-            await smtp.SendMailAsync(mail);
-        }
+        
+     
 
     }
     public async Task VerifyEmail(string email, string token)
@@ -149,6 +123,8 @@ public class UserService : IUserService
         var result = await _userManager.ConfirmEmailAsync(user, token);
         if (result.Succeeded)
         {
+            user.EmailConfirmed = true;
+            _dbcontext.SaveChanges();
             await _signInManager.SignInAsync(user, true);
         }
         else
