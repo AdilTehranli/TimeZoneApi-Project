@@ -44,7 +44,7 @@ public class AuthController : ControllerBase
             {
                 sb.Append(item.Description + " ");
             }
-            throw new RegisterFailedException(sb.ToString().TrimEnd());
+            throw new RegisterFailedException(sb.ToString().TrimEnd()); 
         }
         var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
         string callbackUrl = Url.ActionLink(nameof(VerifyEmail), "Auth", new { email = user.Email, token }, Request.Scheme, Request.Host.ToString());

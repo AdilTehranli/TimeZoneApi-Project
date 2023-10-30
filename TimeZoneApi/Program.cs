@@ -64,7 +64,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
-//TODO: Exception handler yaz
 
 
 app.MapControllers();
