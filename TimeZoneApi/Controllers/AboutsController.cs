@@ -38,9 +38,15 @@ public class AboutsController : ControllerBase
 
     }
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateAbout(int id, AboutUpdateDto updateDto)
+    public async Task<IActionResult> UpdateAbout(int id, [FromForm] AboutUpdateDto updateDto)
     {
         await _aboutService.UpdateAsnyc(id, updateDto);
         return StatusCode(StatusCodes.Status204NoContent);
+    }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetAboutDetail(int id)
+    {
+
+        return Ok(await _aboutService.GetById(id));
     }
 }

@@ -41,7 +41,7 @@ public class CategoriesController : ControllerBase
 
     }
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateCategory(int id, CategoryUpdateDto updateDto)
+    public async Task<IActionResult> UpdateCategory(int id,[FromForm] CategoryUpdateDto updateDto)
     {
    
 

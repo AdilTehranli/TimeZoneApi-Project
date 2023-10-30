@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using TimeZone.Business.Dtos.AboutDtos;
+using TimeZone.Business.Dtos.BannerDtos;
 using TimeZone.Business.Dtos.CategoryDtos;
 using TimeZone.Business.Services.Interfaces;
 using TimeZone.Core.Entities;
@@ -46,6 +47,12 @@ public class AboutService : IAboutService
 
     }
 
+    public async Task<AboutDetailDto> GetById(int id)
+    {
+        var entity = await _getAboutAsync(id);
+        return _mapper.Map<AboutDetailDto>(entity);
+    }
+
     public async Task UpdateAsnyc(int id, AboutUpdateDto updateDto)
     {
         if (id < 1)
@@ -63,5 +70,12 @@ public class AboutService : IAboutService
 
         await _aboutRepository.UpdateAsync(entity);
         await _aboutRepository.SaveAsync();
+    }
+    async Task<About> _getAboutAsync(int id)
+    {
+        if (id <= 0) throw new ArgumentException();
+        var entity = await _aboutRepository.FindByIdAsync(id);
+        if (entity == null) throw new NullReferenceException();
+        return entity;
     }
 }

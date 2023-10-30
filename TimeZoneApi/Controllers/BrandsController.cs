@@ -34,7 +34,7 @@ public class BrandsController : ControllerBase
         return StatusCode(StatusCodes.Status204NoContent);
     }
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateBrand(int id,  BrandUpdateDto updateDto)
+    public async Task<IActionResult> UpdateBrand(int id, [FromForm] BrandUpdateDto updateDto)
     {
             await _brandService.UpdateAsnyc(id, updateDto);
          return StatusCode(StatusCodes.Status204NoContent);
