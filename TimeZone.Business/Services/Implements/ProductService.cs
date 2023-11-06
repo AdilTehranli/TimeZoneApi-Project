@@ -47,11 +47,10 @@ public class ProductService : IProductService
     }
 
     public async Task<IEnumerable<ProductListItemDto>> GetAllAsync()
-    {        
-        
+    {
         return _mapper.Map<IEnumerable<ProductListItemDto>>(
-            _productRepository.Table.Include(c=>c.Category).Include(b=>b.Brand).ToList());
-
+        _productRepository.Table.Include(c => c.Category).Include(b => b.Brand).ToList()) ;
+        
     }
 
     public async Task<ProductDetailDto> GetById(int id)

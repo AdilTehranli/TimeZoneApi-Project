@@ -36,7 +36,7 @@ builder.Services.AddServices();
 builder.Services.AddAutoMapper(typeof(SliderMappingProfiles).Assembly);
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("Smarter"));
 });
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>

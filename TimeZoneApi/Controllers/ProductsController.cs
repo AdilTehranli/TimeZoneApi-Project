@@ -3,6 +3,7 @@ using TimeZone.Business.Dtos.BrandDtos;
 using TimeZone.Business.Dtos.ProductDtos;
 using TimeZone.Business.Services.Implements;
 using TimeZone.Business.Services.Interfaces;
+using TimeZone.Core.Entities;
 
 namespace TimeZoneApi.Controllers;
 
@@ -17,10 +18,38 @@ public class ProductsController : ControllerBase
         _productService = productService;
     }
     [HttpGet]
-    public async Task<IActionResult> GetProduct()
+    public async Task<IActionResult> GetProduct([FromQuery] RequestParams requestParams)
     {
-            return Ok(await _productService.GetAllAsync());
+        if (requestParams.PageNumber < 1)
+        {
+            return BadRequest("Geçersiz sayfa numarası");
+        }
 
+        if (requestParams.PageSize < 1)
+        {
+            return BadRequest("Geçersiz sayfa boyutu");
+        }
+
+        var products = await _productService.GetAllAsync();
+
+        var totalItems = products.Count();
+
+        var skip = (requestParams.PageNumber - 1) * requestParams.PageSize;
+        var pagedProducts = products.Skip(skip).Take(requestParams.PageSize);
+
+        var totalPages = (int)Math.Ceiling(totalItems / (double)requestParams.PageSize);
+        var currentPage = requestParams.PageNumber;
+
+        var response = new
+        {
+            TotalItems = totalItems,
+            TotalPages = totalPages,
+            CurrentPage = currentPage,
+            PageSize = requestParams.PageSize,
+            Data = pagedProducts
+        };
+
+        return Ok(response);
     }
     [HttpPost]
     public async Task<IActionResult> CreateProduct([FromForm] ProductCreateDto dto)
