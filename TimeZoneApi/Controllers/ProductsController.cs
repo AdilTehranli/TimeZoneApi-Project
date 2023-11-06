@@ -18,16 +18,16 @@ public class ProductsController : ControllerBase
         _productService = productService;
     }
     [HttpGet]
-    public async Task<IActionResult> GetProduct([FromQuery] RequestParams requestParams)
+    public async Task<IActionResult> GetProductPagination([FromQuery] RequestParams requestParams)
     {
         if (requestParams.PageNumber < 1)
         {
-            return BadRequest("Geçersiz sayfa numarası");
+            return BadRequest("invalid page number");
         }
 
         if (requestParams.PageSize < 1)
         {
-            return BadRequest("Geçersiz sayfa boyutu");
+            return BadRequest("Invalid page size");
         }
 
         var products = await _productService.GetAllAsync();
@@ -50,6 +50,11 @@ public class ProductsController : ControllerBase
         };
 
         return Ok(response);
+    }
+    [HttpGet]
+    public async Task<IActionResult> GetProduct()
+    {
+        return Ok(await _productService.GetAllAsync());
     }
     [HttpPost]
     public async Task<IActionResult> CreateProduct([FromForm] ProductCreateDto dto)

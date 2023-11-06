@@ -19,7 +19,7 @@ builder.Services.AddCors(opt =>
 {
     opt.AddDefaultPolicy(pol =>
     {
-        pol.WithOrigins("http://localhost:3000/").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+        pol.WithOrigins("http://localhost:3000/").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().WithExposedHeaders("X-Pagination") ;
     });
 });
 builder.Services.AddControllers();
