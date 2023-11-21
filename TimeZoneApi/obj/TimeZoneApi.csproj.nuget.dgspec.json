@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.21.0, )"
+            },
             "CloudinaryDotNet": {
               "target": "Package",
               "version": "[1.22.0, )"
@@ -270,6 +274,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.21.0, )"
             },
             "CloudinaryDotNet": {
               "target": "Package",

@@ -17,6 +17,7 @@ public class ProductsController : ControllerBase
     {
         _productService = productService;
     }
+
     [HttpGet]
     public async Task<IActionResult> GetProductPagination([FromQuery] RequestParams requestParams)
     {
