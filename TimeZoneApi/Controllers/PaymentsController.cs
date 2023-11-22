@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ServiceStack.Text;
 using TimeZone.Business.Services.Interfaces;
+using TimeZone.Core.Entities;
 
 namespace TimeZoneApi.Controllers;
 
@@ -10,66 +11,35 @@ namespace TimeZoneApi.Controllers;
 public class PaymentsController : ControllerBase
 {
 
-    public IBraintreeService _config;
+  private readonly IBraintreeService _braintreeService;
 
-    public PaymentsController(IBraintreeService config)
+    public PaymentsController(IBraintreeService braintreeService)
     {
-        _config = config;
+        _braintreeService = braintreeService;
     }
 
-
-    public static readonly TransactionStatus[] transactionSuccessStatuses =
-        {
-            TransactionStatus.AUTHORIZED,
-            TransactionStatus.AUTHORIZING,
-            TransactionStatus.SETTLED,
-            TransactionStatus.SETTLING,
-            TransactionStatus.SETTLEMENT_CONFIRMED,
-            TransactionStatus.SETTLEMENT_PENDING,
-            TransactionStatus.SUBMITTED_FOR_SETTLEMENT
-        };
-
-    [HttpGet, Route("GenerateToken")]
-    public object GenerateToken()
+    [HttpGet]
+    public IActionResult GetToken()
     {
-        var gateway = _config.GetGetaway();
-        var clientToken = gateway.ClientToken.Generate();
-        return clientToken;
+        var gateway =_braintreeService.GetGetaway();
+        return Ok(gateway.ClientToken.Generate());
     }
 
-    [HttpPost, Route("Checkout")]
-    public object Checkout(vmCheckout model)
+    [HttpPost]
+    public IActionResult Create(string amount)
     {
-        string paymentStatus = string.Empty;
-        var gateway = _config.GetGetaway();
-
+        var gateway = _braintreeService.GetGetaway();
         var request = new TransactionRequest
         {
-            Amount = model.Price,
-            PaymentMethodNonce = model.PaymentMethodNonce,
+            Amount = Convert.ToDecimal(amount),
+            PaymentMethodNonce = "",
             Options = new TransactionOptionsRequest
             {
                 SubmitForSettlement = true
             }
         };
-
         Result<Transaction> result = gateway.Transaction.Sale(request);
-        if (result.IsSuccess())
-        {
-            paymentStatus = "Succeded";
-
-        }
-        else
-        {
-            string errorMessages = "";
-            foreach (ValidationError error in result.Errors.DeepAll())
-            {
-                errorMessages += "Error: " + (int)error.Code + " - " + error.Message + "\n";
-            }
-
-            paymentStatus = errorMessages;
-        }
-
-        return paymentStatus;
+        return Ok(result.IsSuccess());
     }
 }
+

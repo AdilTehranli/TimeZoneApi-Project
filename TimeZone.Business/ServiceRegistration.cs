@@ -1,6 +1,5 @@
 ﻿using BlogProject.Business.ExtensionServices.Implements;
 using BlogProject.Business.ExtensionServices.Interfaces;
-using Braintree;
 using Microsoft.Extensions.DependencyInjection;
 using TimeZone.Business.Services.Implements;
 using TimeZone.Business.Services.Interfaces;
@@ -24,6 +23,7 @@ namespace TimeZone.Business
            services.AddScoped<IContactService,ContactService>();
            services.AddScoped<IRoleService,RoleService>();
            services.AddScoped<IAboutService,AboutService>();
+           services.AddScoped<IBraintreeService, BrantreeService>();
         }
     }
 }

@@ -96,3 +96,5 @@ C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\obj\Debug\net7.0\refint\TimeZon
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\obj\Debug\net7.0\TimeZoneApi.pdb
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\obj\Debug\net7.0\TimeZoneApi.genruntimeconfig.cache
 C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\obj\Debug\net7.0\ref\TimeZoneApi.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\Braintree.dll
+C:\Users\User\c#-ASP.NET\TimeZoneApi\TimeZoneApi\bin\Debug\net7.0\System.Xml.XPath.XmlDocument.dll
